@@ -1,0 +1,165 @@
+﻿{% load static %}
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Solid carbide drill</title>    
+</head>
+
+<body>
+    <p><b>Product Type is SCD</b>.</p>
+    <div id="content">
+        <p style="color:blue">Customer information/contact</p>
+        <p>
+            <input type="text" name="name" id="name" placeholder="SAP account number" style="background-color:mistyrose" />
+            <input type="submit" name="Email" value="Email" onclick="print()" />
+        <p>
+            <input type="text" name="name" id="name" placeholder="End customer name" style="background-color:mistyrose" />
+        <p><p>
+            Do any of the tools pertains to
+        </p>
+        end application of military?
+        <select style="background-color:mistyrose">
+            <option value="1" style="background-color:mistyrose">No</option>
+            <option value="2" style="background-color:mistyrose">Yes</option>
+        </select>
+        <p style="color:blue">Machining information/coolant</p>
+        <p>
+            <input type="text" name="name" placeholder="Workpiece material" style="background-color:mistyrose" />
+        <p>
+            <input type="text" name="name" placeholder="Hardness" style="background-color:mistyrose" />
+        <p>
+            Coolant type
+            <select style="background-color:mistyrose">
+                <option value="">External</option>
+                <option value="">Internal</option>
+                <option value="">MQL</option>
+                <option value="">dry</option>
+            </select>
+        <p>
+            <input type="text" name="name" placeholder="cooling pressure" />
+        <p>
+        <p style="color:blue">Machine/fixture</p>
+        <p>
+            Machine type
+            <select style="background-color:mistyrose">
+                <option value="">Machine Center</option>
+                <option value="">Lathe</option>
+                <option value="">Special purpose Machine</option>
+            </select>
+        <p>
+        <p>
+            Tool
+            <select onchange="document.getElementById('preview').src=this.value">
+                <option value="">Rotating</option>
+                <option value="">Stationary</option>
+            </select>
+        <p>
+        <p>
+            Spindle orientation
+            <select onchange="document.getElementById('preview').src=this.value">
+                <option value="">Horizontal</option>
+                <option value="">Vertical</option>
+            </select>
+        <p>
+        <p style="color:blue">Commercial Information</p>
+        <p>
+            Workpiece Clamping
+            <select onchange="document.getElementById('preview').src=this.value">
+                <option value="">Rigid</option>
+                <option value="">Weak</option>
+            </select>
+        <p>
+        <p>
+            <input type="text" name="name" placeholder="Spindle connection" />
+        <p>
+        <p>
+            Repeat request
+            <select style="background-color:mistyrose">
+                <option value="">No</option>
+                <option value="">Yes</option>
+            </select>
+        <p>
+        <p>
+            <input type="text" name="name" placeholder="Required quantity" />
+        <p>
+        <p>
+            Repeat orders expected
+            <select onchange="document.getElementById('preview').src=this.value">
+                <option value="">No</option>
+                <option value="">Yes</option>
+            </select>
+        <p>
+        <p>
+            Probability of order
+            <select onchange="document.getElementById('preview').src=this.value">
+                <option value="">High</option>
+                <option value="">Medium</option>
+                <option value="">Low</option>
+            </select>
+        <p>
+        <p style="color:blue">Drilling details</p>
+        <p>
+            Tess drawing
+            <select style="background-color:mistyrose">
+                <option value="">No</option>
+                <option value="">Yes</option>
+            </select>
+        <p>
+        <p>
+            Interrupted cut
+            <select style="background-color:mistyrose">
+                <option value="">No</option>
+                <option value="">Yes</option>
+            </select>
+        <p>
+        <p>
+            Drill Entry
+            <select style="background-color:mistyrose">
+                <option value="">Flat</option>
+                <option value="">core hole</option>
+                <option value="">irregular</option>
+                <option value="">pilot drill</option>
+            </select>
+        <p>
+        <p>
+            Hole type
+            <select style="background-color:mistyrose">
+                <option value="">No</option>
+                <option value="">Yes</option>
+            </select>
+        <p>
+    </div>
+
+    <div class="item">
+        <p>
+            Drill style
+            <select onchange="document.getElementById('preview').src=this.value">
+                <option value="{%static 'Images/simple_drill.jpg'%}">Drilling</option>
+                <option value="{%static 'Images/step_drill.jpg'%}">Drilling and chamfering</option>
+                <option value="{%static 'Images/step_drill.jpg'%}">Drilling and countersinking</option>
+            </select>
+            <br /><br />
+            <img id="preview">
+    </div>
+
+    <script>
+        function generatePDF() {
+            alert("Email button clicked!");
+            var doc = new jsPDF();
+            doc.fromHTML(document.getElementById("content"), // page element which you want to print as PDF
+                15,
+                15,
+                {
+                    'width': 170
+                },
+                function (a) {
+                    doc.save("HTML2PDF.pdf");
+                });
+        }
+    </script>
+
+    <div id="editor"></div>    
+</body>
+</html>

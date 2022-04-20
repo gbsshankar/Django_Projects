@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>RFQ Hole making </title>
+    <style>
+        body {background-color: gold;text-align: center}        
+    </style>
+</head>
+<body>
+    <form action="Holemaking" method="post">
+        {% csrf_token %}        
+        <p><b>Select Product Type</b>.</p>
+        <input type="radio" id="drill" name="tool" value="SCdrill">
+        <label for="drill">SCdrill</label><br><br>
+        <input type="radio" id="reamer" name="tool" value="Reamer">
+        <label for="reamer">Reamer</label><br><br>
+        <input type="radio" id="pcd" name="tool" value="PCD">
+        <label for="pcd">PCD Tools</label><br><br>
+        <input type="radio" id="inserts" name="tool" value="Inserts">
+        <label for="inserts">KSEM/KTIP inserts</label><br><br>
+        <input type="radio" id="modulardrills" name="tool" value="modulardrills">
+        <label for="modulardrills">Modular drills</label><br><br>
+        <input type="submit" />
+    </form>
+</body>
+</html>

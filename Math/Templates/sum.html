@@ -1,0 +1,18 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Addition</title>
+</head>
+<body>
+    <form action="sum" method="post">
+        {% csrf_token %}
+        <input type="number" name="num1" placeholder="Enter number 1" /><br /><br />
+        <input type="number" name="num2" placeholder="Enter number 2" /><br /><br />
+        Result = {{result}}<br /><br />
+        <input type="submit" /><br /><br />
+    </form>    
+</body>
+
+</html>

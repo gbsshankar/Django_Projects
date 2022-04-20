@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <div>Hello There!</div>
+    <div>We're almost done. Before using our services you need to create an account.</div><br />
+    <form action="register" method="post">
+        {% csrf_token %}
+        <input type="text" name="user" placeholder="username" /><br /><br />
+        <input type="password" name="passw" placeholder="password" /><br /><br />
+        <input type="email" name="email" placeholder='Email' /><br /><br />
+        <button type="submit" id="createuser" name="btnclick">
+            Create account
+        </button>
+    </form>
+    <div>
+        {% if messages %}
+        {% for message in messages %}
+        {% if message.tags %}
+        <script> alert("{{ message}}") </script>
+        {% endif %}
+        {% endfor %}
+        {% endif %}
+    </div>
+</body>
+</html>

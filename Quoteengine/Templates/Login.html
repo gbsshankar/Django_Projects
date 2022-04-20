@@ -1,0 +1,36 @@
+﻿{% load static %}
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>RFQ Form</title>
+    <style>        
+    body {background-color: gold;text-align:center}    
+    </style>
+</head>
+<body>       
+    <form action="Login" method="post">
+        {% csrf_token %}
+        <img src="{%static 'Images/kennametal.jpg'%}" alt="KMT" class="center">
+        <p><b>Select Product Type</b>.</p>        
+        <input type="radio" id="scd" name="tool" value="Holemaking">
+        <label for="scd">Holemaking</label><br><br>
+        <input type="radio" id="sce" name="tool" value="SCEndmill">
+        <label for="sce">SC Endmill</label><br><br>
+        <input type="radio" id="turning" name="tool" value="Turning">
+        <label for="turning">Turning</label><br><br>
+        <input type="radio" id="milling" name="tool" value="Milling">
+        <label for="milling">Milling</label><br><br>
+        <input type="radio" id="systems" name="tool" value="Systems">
+        <label for="systems">Systems</label><br><br>
+        <input type="submit" />
+        <input type="button" id="btnclick" value="Hello" onclick="display();" />
+    </form>
+    <script type="text/javascript">
+        function display() {
+            alert("hello");
+        };
+    </script>
+</body>
+</html>
